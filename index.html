@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>tracking.js - color with video</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/tracking-min.js"></script>
+    <script src="js/stats.min.js"></script>
+    <script src="js/color_camera_gui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"></script>
+    <script src="js/main.js" async></script>
+
+    </head>
+    <body>
+        <div class="demo-frame">
+            <div class="select">
+                <label for="videoSource">Video source: </label><select id="videoSource"></select>
+            </div>
+            <div class="demo-container">
+
+                <div id="rectangle"></div>
+                
+                <video id="video"></video>
+                
+                <canvas id="canvas"></canvas>
+            
+            </div>
+        </div>
+    </body>
+</html>
