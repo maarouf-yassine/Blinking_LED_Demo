@@ -3,17 +3,20 @@
     <head>
     <meta charset="utf-8">
     <title>tracking.js - color with video</title>
-    <link rel="stylesheet" href="css/main.css">
+
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css"> 
 
     <script src="js/tracking-min.js"></script>
     <script src="js/stats.min.js"></script>
     <script src="js/color_camera_gui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="js/main.js" async></script>
 
     </head>
     <body>
-        <div class="demo-frame">
+        <!--<div class="demo-frame">
             <div class="select">
                 <label for="videoSource">Video source: </label><select id="videoSource"></select>
             </div>
@@ -26,6 +29,30 @@
                 <canvas id="canvas"></canvas>
             
             </div>
-        </div>
+        </div> -->
+        <div id="container">
+
+            <h2>Welcome to AP Scanner v0.3</h2>
+
+            <ol>
+                <li>Allow access to your camera device to be able to launch video stream.</li>
+                <li>Try to center the camera frame on the Access point for the best results.</li>
+                <li>Click on Scan AP to start scanning the Access point.</li>
+            </ol>
+
+            <div id="video-capture-container">
+                <div class="select">
+                    <label for="videoSource">Video source: </label><select id="videoSource"></select>
+                </div>
+                
+                <div id="guiContainer"></div>
+
+                <div class="camera-container">
+                    <video id="video" playsinline autoplay></video>
+                </div>
+                <br>
+
+                <canvas id="canvasOutput"></canvas>
+            </div>
     </body>
 </html>
