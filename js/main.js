@@ -72,7 +72,6 @@ function start() {
       streaming = true;
       canvas.setAttribute("width", width);
       canvas.setAttribute("height", height);
-      vc = new cv.VideoCapture(videoElement);
     }
   }, false);
 }
