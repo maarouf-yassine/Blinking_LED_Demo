@@ -70,6 +70,8 @@ function start() {
       videoElement.setAttribute("width", width);
       videoElement.setAttribute("height", height);
       streaming = true;
+      canvas.setAttribute("width", width);
+      canvas.setAttribute("height", height);
       vc = new cv.VideoCapture(videoElement);
     }
   }, false);
@@ -78,3 +80,5 @@ function start() {
 videoSelect.onchange = start;
 
 start();
+
+
