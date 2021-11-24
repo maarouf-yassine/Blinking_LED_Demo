@@ -56,6 +56,6 @@ label {
   width: 100%;
 }
 
-video, canvas {
+canvas {
   position: absolute;
 }
