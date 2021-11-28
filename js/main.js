@@ -141,7 +141,7 @@ window.onload = function() {
     } 
   });
 
-  var tracker = new tracking.ColorTracker(['red']);
+  var tracker = new tracking.ColorTracker(['red','green']);
   tracker.setMinDimension(5);
 
   tracking.track('#video', tracker);
