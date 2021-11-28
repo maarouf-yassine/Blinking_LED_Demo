@@ -136,7 +136,7 @@ window.onload = function() {
     if (lgt < 0.4 || lgt>0.6   || sat < 0.4 ){
       return false;
     }
-    if (hue > 70/360 && hue < 150/360){
+    if (hue > 70/360 && hue < 160/360){
       return true;
     } 
   });
