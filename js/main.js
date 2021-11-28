@@ -126,6 +126,7 @@ window.onload = function() {
     if (hue < 30/360 || hue > 345/360){
       return true;
     }
+    return false;
   });
 
   tracking.ColorTracker.registerColor('green', function(r, g, b) {
@@ -138,10 +139,25 @@ window.onload = function() {
     }
     if (hue > 70/360 && hue < 160/360){
       return true;
-    } 
+    }
+    return false; 
   });
 
-  var tracker = new tracking.ColorTracker(['red','green']);
+  tracking.ColorTracker.registerColor('blue', function(r, g, b) {
+    let hslVal = rgbToHsl(r,g,b);
+    let hue = hslVal[0];
+    let sat = hslVal[1];
+    let lgt = hslVal[2];
+    if (lgt < 0.4 || lgt>0.6   || sat < 0.4 ){
+      return false;
+    }
+    if (hue > 170/360 && hue < 265/360){
+      return true;
+    }
+    return false; 
+  });
+
+  var tracker = new tracking.ColorTracker(['red','green','blue']);
   tracker.setMinDimension(5);
 
   tracking.track('#video', tracker);
