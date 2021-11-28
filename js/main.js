@@ -120,20 +120,28 @@ window.onload = function() {
     let hue = hslVal[0];
     let sat = hslVal[1];
     let lgt = hslVal[2];
-    if (lgt < 0.4 || lgt>0.6   || sat < 0.25 ){
+    if (lgt < 0.4 || lgt>0.6   || sat < 0.4 ){
       return false;
     }
-    if (hue < 30 || hue> 330){
+    if (hue < 30/360 || hue > 345/360){
       return true;
-    }  
-  
-    // if (r > 200 && g < 100 && b < 100) {
-    //   return true;
-    // }
-    // return false;
+    }
   });
 
-  var tracker = new tracking.ColorTracker(['yellow', 'purple','red']);
+  tracking.ColorTracker.registerColor('green', function(r, g, b) {
+    let hslVal = rgbToHsl(r,g,b);
+    let hue = hslVal[0];
+    let sat = hslVal[1];
+    let lgt = hslVal[2];
+    if (lgt < 0.4 || lgt>0.6   || sat < 0.4 ){
+      return false;
+    }
+    if (hue < 70/360 || hue > 150/360){
+      return true;
+    } 
+  });
+
+  var tracker = new tracking.ColorTracker(['red']);
   tracker.setMinDimension(5);
 
   tracking.track('#video', tracker);
