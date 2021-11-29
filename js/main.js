@@ -134,10 +134,10 @@ window.onload = function() {
     let hue = hslVal[0];
     let sat = hslVal[1];
     let lgt = hslVal[2];
-    if (lgt < 0.4 || lgt>0.6   || sat < 0.4 ){
+    if (lgt < 0.4 || lgt>0.8   || sat < 0.4 ){
       return false;
     }
-    if (hue > 70/360 && hue < 160/360){
+    if (hue > 50/360 && hue < 160/360){
       return true;
     }
     return false; 
